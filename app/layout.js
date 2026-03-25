@@ -1,7 +1,8 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Inter } from "next/font/google"; 
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"; 
 
 export const metadata = {
   title: {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
