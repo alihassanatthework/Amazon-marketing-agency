@@ -2,6 +2,7 @@
 
 import SectionHeading from "./SectionHeading";
 import FadeUp from "./FadeUp";
+import Image from "next/image";
 
 const cases = [
   {
@@ -26,8 +27,9 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="section bg-gray-50">
+    <section className="section">
       <div className="container">
+
         <FadeUp>
           <SectionHeading
             badge="Case Studies"
@@ -36,25 +38,44 @@ export default function CaseStudies() {
           />
         </FadeUp>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-14">
+        {/* 🔥 FIX: ADD MAP */}
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mt-16">
           {cases.map((item, index) => (
-            <FadeUp key={item.title} delay={index * 0.08}>
-              <div className="card bg-white">
-                <p className="text-sm text-gray-500 uppercase tracking-wide">
+            <div
+              key={item.title}
+              className="card bg-[#111] overflow-hidden group hover:-translate-y-1 transition"
+            >
+
+              {/* Image */}
+              <div className="relative w-full h-[200px]">
+                <Image
+                  src={`/images/case${index + 1}.jpeg`}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-sm text-gray-500 uppercase">
                   {item.title}
                 </p>
 
-                <h3 className="text-2xl font-semibold mt-4">
+                <h3 className="text-2xl font-semibold mt-3">
                   {item.result}
                 </h3>
 
-                <p className="text-muted mt-4">
+                <p className="text-muted mt-3">
                   {item.description}
                 </p>
               </div>
-            </FadeUp>
+
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

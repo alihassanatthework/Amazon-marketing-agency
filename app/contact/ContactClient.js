@@ -44,7 +44,7 @@ export default function ContactClient() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.message || "Failed.");
+        throw new Error(data.message || "Failed to send message.");
       }
 
       setStatus({
@@ -62,7 +62,7 @@ export default function ContactClient() {
       setStatus({
         loading: false,
         success: false,
-        error: error.message,
+        error: error.message || "Something went wrong.",
       });
     }
   };
@@ -72,10 +72,17 @@ export default function ContactClient() {
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <FadeUp>
           <span className="badge">Contact</span>
-          <h1 className="heading mt-4">Let’s talk</h1>
+          <h1 className="heading mt-4">Let’s talk about your project.</h1>
           <p className="text-muted mt-6">
-            Tell us about your project.
+            Share a little about what you’re building. We’ll keep the process
+            simple, clear, and focused.
           </p>
+
+          <div className="mt-10 space-y-4 text-sm text-gray-600">
+            <p>Response-focused communication</p>
+            <p>Minimal and structured process</p>
+            <p>Built for serious, thoughtful projects</p>
+          </div>
         </FadeUp>
 
         <FadeUp delay={0.08}>
@@ -93,7 +100,7 @@ export default function ContactClient() {
               <input
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder="Email Address"
                 className="input"
                 value={form.email}
                 onChange={handleChange}
@@ -102,28 +109,32 @@ export default function ContactClient() {
 
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder="Tell us about your project"
                 className="input min-h-[160px]"
                 value={form.message}
                 onChange={handleChange}
                 required
               />
 
-              <button className="btn-primary">
-                {status.loading ? "Sending..." : "Send"}
+              <button
+                className="btn-primary mt-2 disabled:opacity-60 flex items-center justify-center gap-2"
+                disabled={status.loading}
+              >
+                {status.loading && (
+                  <span className="inline-block h-4 w-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
+                )}
+                {status.loading ? "Sending..." : "Send Message"}
               </button>
             </form>
 
             {status.success && (
-              <p className="text-green-600 mt-4">
-                Message sent successfully
+              <p className="mt-5 text-green-600">
+                Your message was sent successfully.
               </p>
             )}
 
             {status.error && (
-              <p className="text-red-600 mt-4">
-                {status.error}
-              </p>
+              <p className="mt-5 text-red-600">{status.error}</p>
             )}
           </div>
         </FadeUp>

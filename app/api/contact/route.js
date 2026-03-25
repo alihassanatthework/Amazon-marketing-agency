@@ -2,8 +2,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const body = await req.json();
-    const { name, email, message } = body;
+    const { name, email, message } = await req.json();
 
     if (!name || !email || !message) {
       return Response.json(
@@ -23,7 +22,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New message from ${name}`,
       replyTo: email,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
@@ -44,7 +43,7 @@ export async function POST(req) {
     console.error("Contact API error:", error);
 
     return Response.json(
-      { success: false, message: "Something went wrong." },
+      { success: false, message: "Something went wrong while sending email." },
       { status: 500 }
     );
   }

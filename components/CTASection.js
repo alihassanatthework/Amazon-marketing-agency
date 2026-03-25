@@ -10,7 +10,7 @@ export default function CTASection() {
     <section className="section">
       <div className="container">
         <motion.div
-          className="card-soft text-center py-14"
+          className="card-soft text-center py-16"
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

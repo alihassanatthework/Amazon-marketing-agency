@@ -21,7 +21,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="section">
+    <section className="section bg-[#0d0d0d]">
       <div className="container">
         <SectionHeading
           badge="Services"
@@ -29,7 +29,7 @@ export default function ServicesPreview() {
           text="We keep things simple: strategy, execution, and measurable progress."
         />
 
-        <div className="grid md:grid-cols-3 gap-6 section-space">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mt-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

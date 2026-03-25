@@ -12,20 +12,21 @@ const stats = [
 export default function Stats() {
   return (
     <section className="section pt-0">
-      <div className="container grid grid-cols-2 md:grid-cols-4 gap-6">
-        {stats.map((item, index) => (
-          <motion.div
-            key={item.label}
-            className="card text-center"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
-          >
-            <h3 className="text-3xl md:text-4xl font-semibold">{item.number}</h3>
-            <p className="text-muted mt-2">{item.label}</p>
-          </motion.div>
-        ))}
+      <div className="container grid md:grid-cols-3 gap-6">
+        <div className="card-soft text-center">
+          <h3 className="text-3xl font-semibold">75+</h3>
+          <p className="text-muted mt-2">Projects delivered</p>
+        </div>
+
+        <div className="card-soft text-center">
+          <h3 className="text-3xl font-semibold">173%</h3>
+          <p className="text-muted mt-2">Growth uplift</p>
+        </div>
+
+        <div className="card-soft text-center">
+          <h3 className="text-3xl font-semibold">5★</h3>
+          <p className="text-muted mt-2">Client satisfaction</p>
+        </div>
       </div>
     </section>
   );
