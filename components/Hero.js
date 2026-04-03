@@ -93,13 +93,13 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <div className="hero-stat">
-            <h3>75+</h3>
-            <p>Million Generated</p>
+            <h3>$7M+</h3>
+            <p>Revenue Generated</p>
           </div>
 
           <div className="hero-stat">
-            <h3>173%</h3>
-            <p>PPC Sales</p>
+            <h3>170%</h3>
+            <p>PPC Sales Growth</p>
           </div>
 
           <div className="hero-stat">
@@ -108,7 +108,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-stat">
-            <h3>5%</h3>
+            <h3>5–10%</h3>
             <p>Average TACOS</p>
           </div>
         </motion.div>
