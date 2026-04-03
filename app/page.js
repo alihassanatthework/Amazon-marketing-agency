@@ -1,7 +1,8 @@
 // 📁 app/page.js
 
 import Hero from "../components/Hero";
-import Stats from "../components/Stats";
+// import Stats from "../components/Stats";
+import BrandSection from "../components/BrandSection";
 import ServicesPreview from "../components/ServicesPreview";
 import CaseStudies from "../components/CaseStudies";
 import Testimonials from "../components/Testimonials";
@@ -20,7 +21,11 @@ export default function Home() {
       <Hero />
 
       {/* Stats Section */}
-      <Stats />
+      {/* <Stats /> */}
+
+      {/* Brand Section */}
+      <BrandSection />
+
 
       {/* Services Preview */}
       <ServicesPreview />

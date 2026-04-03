@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="text-xl font-semibold tracking-tight">
-          YourBrand
+          sellerova
         </Link>
 
         <div className="flex items-center gap-8 text-sm text-gray-700">

@@ -11,7 +11,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="section pt-0">
+    <section className="section-tight pt-6 md:pt-8">
       <div className="container grid md:grid-cols-3 gap-6">
         <div className="card-soft text-center">
           <h3 className="text-3xl font-semibold">75+</h3>

@@ -2,36 +2,16 @@ import FadeUp from "../../components/FadeUp";
 
 const services = [
   {
-    title: "Strategy",
+    title: "Amazon Advertising Management",
     description:
-      "We create clear direction, refined messaging, and growth-focused planning that reduces noise and improves decision-making.",
+      "Increase visibility, drive more sales, and maximize ROI with strategic, data driven advertising campaigns tailored for consistent growth.",
   },
   {
-    title: "Performance Marketing",
+    title: "Amazon Brand Management",
     description:
-      "Campaign systems designed for efficient growth, better conversion quality, and stronger long-term performance.",
+      "Grow and scale your Amazon brand with expert, end to end management focused on performance, optimization, and long term success.",
   },
-  {
-    title: "Creative Direction",
-    description:
-      "Minimal and premium design language that builds trust and supports higher conversion.",
-  },
-  {
-    title: "Brand Positioning",
-    description:
-      "Sharper positioning to help your business feel distinct, credible, and easier to understand.",
-  },
-  {
-    title: "Landing Page Design",
-    description:
-      "Focused page structures built to guide attention, improve UX, and support lead generation.",
-  },
-  {
-    title: "Conversion Optimization",
-    description:
-      "We refine copy, hierarchy, and interaction patterns to create smoother user journeys.",
-  },
-];
+  ];
 
 export const metadata = {
   title: "Services | YourBrand",
