@@ -14,8 +14,26 @@ const services = [
   ];
 
 export const metadata = {
-  title: "Services | YourBrand",
-  description: "Explore our premium minimal services built for growth.",
+  title: "Services",
+  description:
+    "Explore Sellerova's Amazon growth services including PPC management, brand management, and catalog optimization.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Services | Sellerova",
+    description:
+      "Explore Sellerova's Amazon growth services including PPC management, brand management, and catalog optimization.",
+    url: "https://www.sellerova.com/services",
+    siteName: "Sellerova",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Sellerova",
+    description:
+      "Explore Sellerova's Amazon growth services including PPC management, brand management, and catalog optimization.",
+  },
 };
 
 export default function ServicesPage() {

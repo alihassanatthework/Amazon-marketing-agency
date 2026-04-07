@@ -2,33 +2,41 @@
 
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { Headphones, ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   const router = useRouter();
 
   return (
-    <section className="section">
+    <section className="section-sm">
       <div className="container">
         <motion.div
-          className="card-soft text-center py-16"
+          className="cta-banner"
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="subheading max-w-2xl mx-auto">
-            Ready to build a cleaner, stronger version of your brand online?
-          </h2>
+          <div className="cta-banner-left">
+            <div className="cta-banner-icon">
+              <Headphones size={34} strokeWidth={2} />
+            </div>
 
-          <p className="text-muted mt-4 max-w-2xl mx-auto">
-            Let’s create a website experience that feels premium, focused, and easy to trust.
-          </p>
+            <div className="cta-banner-copy">
+              <h2>If you want to scale, stop wasting time.</h2>
+              <p>
+                Let&apos;s build a <span>profitable Amazon growth</span> engine
+                for your brand.
+              </p>
+            </div>
+          </div>
 
           <button
-            className="btn-primary mt-8"
+            className="cta-banner-button"
             onClick={() => router.push("/contact")}
           >
-            Contact Us
+            <span>Contact Us</span>
+            <ArrowRight size={18} strokeWidth={2.4} />
           </button>
         </motion.div>
       </div>

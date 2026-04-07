@@ -3,6 +3,30 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { DollarSign, TrendingUp, PieChart, Target } from "lucide-react";
+
+const stats = [
+  {
+    value: "$7M+",
+    label: "Revenue Generated",
+    icon: DollarSign,
+  },
+  {
+    value: "170%",
+    label: "YoY Sales Growth",
+    icon: TrendingUp,
+  },
+  {
+    value: "27%",
+    label: "Profit Acquired",
+    icon: PieChart,
+  },
+  {
+    value: "5-10%",
+    label: "Average ACOS",
+    icon: Target,
+  },
+];
 
 export default function Hero() {
   const router = useRouter();
@@ -11,7 +35,6 @@ export default function Hero() {
     <section className="hero-home">
       <div className="container">
         <div className="hero-home-grid">
-          {/* LEFT */}
           <div>
             <motion.span
               className="hero-badge"
@@ -65,7 +88,6 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT */}
           <motion.div
             className="hero-visual-shell"
             initial={{ opacity: 0, scale: 0.96 }}
@@ -84,32 +106,28 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* STATS */}
         <motion.div
           className="hero-stats-grid"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
         >
-          <div className="hero-stat-card">
-            <h3>$7M+</h3>
-            <p>Revenue Generated</p>
-          </div>
+          {stats.map((item, index) => {
+            const Icon = item.icon;
 
-          <div className="hero-stat-card">
-            <h3>170%</h3>
-            <p>YoY Sales Growth</p>
-          </div>
+            return (
+              <div key={index} className="hero-stat-card hero-stat-card-row">
+                <div className="hero-stat-icon">
+                  <Icon size={28} strokeWidth={2.2} className="text-[#FF9900]" />
+                </div>
 
-          <div className="hero-stat-card">
-            <h3>27%</h3>
-            <p>Profit Acquired</p>
-          </div>
-
-          <div className="hero-stat-card">
-            <h3>5-10%</h3>
-            <p>Average ACOS</p>
-          </div>
+                <div>
+                  <h3>{item.value}</h3>
+                  <p>{item.label}</p>
+                </div>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

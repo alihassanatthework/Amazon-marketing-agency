@@ -10,6 +10,8 @@
   --muted: #9ca3af;
   --border: #262626;
   --card: #111111;
+  --accent: #ff9900;
+  --accent-soft: rgba(255, 153, 0, 0.12);
 }
 
 html {
@@ -25,6 +27,10 @@ body {
 /* ========================= */
 /* LAYOUT */
 /* ========================= */
+
+.section-sm {
+  @apply py-10 px-4 md:py-14 md:px-6;
+}
 
 .section-tight {
   @apply py-16 px-4 md:py-20 md:px-6;
@@ -143,19 +149,30 @@ body {
 }
 
 .hero-stats-grid {
-  @apply grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-10;
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-10;
 }
 
 .hero-stat-card {
-  @apply rounded-2xl border border-[#2a2a2a] bg-[#0f0f0f] px-5 py-5 text-center shadow-[0_8px_30px_rgba(0,0,0,0.25)];
+  @apply rounded-2xl border border-[#2a2a2a] bg-[#0f0f0f] px-5 py-5 shadow-[0_8px_30px_rgba(0,0,0,0.25)];
+  @apply flex items-center gap-4;
+}
+
+.hero-stat-icon {
+  @apply flex items-center justify-center rounded-xl shrink-0;
+  width: 56px;
+  height: 56px;
+  color: var(--accent);
+  background: radial-gradient(circle, rgba(255, 153, 0, 0.15), transparent 70%);
+  border: 1px solid rgba(255, 153, 0, 0.16);
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.15);
 }
 
 .hero-stat-card h3 {
-  @apply text-2xl md:text-3xl font-semibold text-white;
+  @apply text-xl md:text-2xl font-semibold text-white;
 }
 
 .hero-stat-card p {
-  @apply mt-2 text-sm md:text-base text-gray-400;
+  @apply mt-1 text-sm md:text-base text-gray-400;
 }
 
 /* ========================= */
@@ -229,23 +246,7 @@ body {
 }
 
 .brand-copy-box-visual {
-  @apply p-0;
-}
-
-.brand-why-content h3 {
-  @apply text-white text-2xl md:text-3xl font-semibold leading-tight mb-4;
-}
-
-.brand-why-content p {
-  @apply text-white/90 text-base md:text-lg leading-8;
-}
-/* ========================= */
-/* BRAND WHY INLINE (FIXED) */
-/* ========================= */
-
-.brand-copy-box-visual {
-  @apply px-6 md:px-10 py-8;
-  @apply bg-[#0a0a0a];
+  @apply px-6 md:px-10 py-8 bg-[#111];
 }
 
 .brand-why-inline {
@@ -253,7 +254,7 @@ body {
 }
 
 .brand-why-header {
-  @apply flex items-start justify-between gap-4 mb-5;
+  @apply flex items-center justify-between gap-4 mb-5;
 }
 
 .brand-why-header h3 {
@@ -268,9 +269,6 @@ body {
 
 .brand-why-inline p {
   @apply text-white/90 text-base md:text-lg leading-8;
-}
-.brand-why-header {
-  align-items: center;
 }
 
 /* ========================= */
@@ -302,8 +300,9 @@ body {
 /* ========================= */
 
 .service-card {
-  @apply relative overflow-hidden rounded-3xl border border-gray-800 bg-[#0d0d0d] p-8 md:p-10;
-  @apply flex flex-col justify-between h-[560px] transition-all duration-300;
+  @apply relative overflow-hidden rounded-3xl border border-gray-800 bg-[#0d0d0d] p-8 md:p-10 flex flex-col justify-between;
+  height: 560px;
+  transition: all 0.3s ease;
 }
 
 .service-card:hover {
@@ -313,7 +312,7 @@ body {
 }
 
 .service-card-top {
-  @apply min-h-[240px];
+  min-height: 240px;
 }
 
 .service-card-title {
@@ -340,135 +339,7 @@ body {
 .service-card-image-box {
   @apply relative w-full h-[230px] rounded-2xl overflow-hidden bg-[#111111] border border-gray-800 p-4;
 }
-/* ========================= */
-/* CASE STUDIES SCROLL */
-/* ========================= */
 
-.case-slider-shell {
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-}
-
-.case-slider-track {
-  display: flex;
-  gap: 2rem;
-  width: max-content;
-  animation: caseScroll 30s linear infinite;
-}
-
-.case-slider-shell:hover .case-slider-track {
-  animation-play-state: paused;
-}
-
-@keyframes caseScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-/* ========================= */
-/* TESTIMONIAL SCROLL */
-/* ========================= */
-
-.testimonial-slider-shell {
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-}
-
-.testimonial-slider-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  animation: testimonialScroll 35s linear infinite;
-}
-
-.testimonial-slider-shell:hover .testimonial-slider-track {
-  animation-play-state: paused;
-}
-
-@keyframes testimonialScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-/* ========================= */
-/* TESTIMONIAL SLIDER */
-/* ========================= */
-
-.testimonial-slider-shell {
-  overflow: hidden;
-  margin-top: 4rem;
-  mask-image: linear-gradient(to right, transparent, white 8%, white 92%, transparent);
-}
-
-.testimonial-slider-track {
-  display: flex;
-  align-items: stretch;
-  gap: 1.5rem;
-  width: max-content;
-  animation: testimonialScroll 38s linear infinite;
-}
-
-.testimonial-slider-shell:hover .testimonial-slider-track {
-  animation-play-state: paused;
-}
-
-.testimonial-slide {
-  width: 420px;
-  min-width: 420px;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  white-space: normal;
-  border: 1px solid #262626;
-  background: #111111;
-  border-radius: 24px;
-  padding: 32px;
-}
-
-.testimonial-quote {
-  color: #9ca3af;
-  font-size: 1.75rem;
-  line-height: 1.9;
-  white-space: normal;
-  word-break: break-word;
-}
-
-.testimonial-name {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .testimonial-slide {
-    width: 85vw;
-    min-width: 85vw;
-    min-height: 280px;
-    padding: 24px;
-  }
-
-  .testimonial-quote {
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-}
-
-@keyframes testimonialScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 /* ========================= */
 /* CASE STUDY SLIDER */
 /* ========================= */
@@ -538,7 +409,149 @@ body {
   line-height: 1.8;
 }
 
+@keyframes caseScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================= */
+/* TESTIMONIAL SLIDER */
+/* ========================= */
+
+.testimonial-slider-shell {
+  overflow: hidden;
+  margin-top: 4rem;
+  mask-image: linear-gradient(to right, transparent, white 8%, white 92%, transparent);
+}
+
+.testimonial-slider-track {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: max-content;
+  animation: testimonialScroll 38s linear infinite;
+}
+
+.testimonial-slider-shell:hover .testimonial-slider-track {
+  animation-play-state: paused;
+}
+
+.testimonial-slide {
+  width: 420px;
+  min-width: 420px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: normal;
+  border: 1px solid #262626;
+  background: #111111;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.testimonial-quote {
+  color: #9ca3af;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.testimonial-name {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+@keyframes testimonialScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================= */
+/* CTA BANNER */
+/* ========================= */
+
+.cta-banner {
+  @apply relative flex items-center justify-between gap-6 overflow-hidden rounded-[28px];
+  @apply px-6 py-5 md:px-8 md:py-6;
+  border: 1px solid rgba(255, 153, 0, 0.25);
+  background:
+    radial-gradient(circle at left center, rgba(255, 153, 0, 0.12), transparent 35%),
+    linear-gradient(180deg, #120c05 0%, #0f0b08 100%);
+  box-shadow:
+    0 0 20px rgba(255, 153, 0, 0.12),
+    inset 0 0 12px rgba(255, 153, 0, 0.1);
+}
+
+.cta-banner-left {
+  @apply flex items-center gap-5;
+}
+
+.cta-banner-icon {
+  @apply flex items-center justify-center rounded-full shrink-0;
+  width: 60px;
+  height: 60px;
+  color: var(--accent);
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  background: rgba(255, 153, 0, 0.08);
+  box-shadow: 0 0 16px rgba(255, 153, 0, 0.2);
+}
+
+.cta-banner-copy h2 {
+  @apply text-white font-semibold;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.2;
+}
+
+.cta-banner-copy p {
+  @apply mt-1 text-gray-400;
+  font-size: 1rem;
+}
+
+.cta-banner-copy span {
+  @apply text-[#FF9900] font-semibold;
+}
+
+.cta-banner-button {
+  @apply flex items-center gap-2 rounded-full shrink-0 px-6 py-3 font-semibold text-black;
+  background: linear-gradient(180deg, #ffbe4d 0%, #ff9900 100%);
+  box-shadow:
+    0 8px 20px rgba(255, 153, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.cta-banner-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
 @media (max-width: 768px) {
+  .hero-stat-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .service-card {
+    height: auto;
+    min-height: 520px;
+  }
+
   .case-slide {
     width: 88vw;
     min-width: 88vw;
@@ -557,13 +570,76 @@ body {
     font-size: 1rem;
     line-height: 1.7;
   }
+
+  .testimonial-slide {
+    width: 85vw;
+    min-width: 85vw;
+    min-height: 280px;
+    padding: 24px;
+  }
+
+  .testimonial-quote {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .cta-banner {
+    @apply flex-col items-start gap-5 px-5 py-5;
+  }
+
+  .cta-banner-left {
+    @apply items-start;
+  }
+
+  .cta-banner-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cta-banner-button {
+    @apply w-full justify-center;
+  }
+}
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-top: 18px;
 }
 
-@keyframes caseScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.testimonial-stars span {
+  color: #ff9900;
+  font-size: 16px;
+  line-height: 1;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.testimonial-name {
+  margin-top: 18px;
+}
+
+.footer-link-group {
+  @apply flex items-start gap-3 text-gray-400 transition-all duration-300;
+}
+
+.footer-link-group:hover {
+  @apply text-white;
+}
+
+.footer-icon-wrap {
+  @apply flex items-center justify-center rounded-xl shrink-0;
+  width: 38px;
+  height: 38px;
+  color: #ff9900;
+  border: 1px solid rgba(255, 153, 0, 0.22);
+  background: rgba(255, 153, 0, 0.06);
+  box-shadow: 0 0 14px rgba(255, 153, 0, 0.12);
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
 }

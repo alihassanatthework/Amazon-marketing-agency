@@ -51,8 +51,8 @@ export default function CaseStudies() {
         <FadeUp>
           <SectionHeading
             badge="Case Studies"
-            title="Proof, not promises."
-            text="Real outcomes from structured execution and focused strategies."
+            title="Proof Not Promises"
+            text="Maximize your Amazon brand with proven optimization and advertising."
           />
         </FadeUp>
 
