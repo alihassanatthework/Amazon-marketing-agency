@@ -6,16 +6,34 @@ import Image from "next/image";
 
 const cases = [
   {
-    title: "Home Improvement Brand",
-    result: "163% Revenue Growth",
+    title: "Beauty and Personal Care",
+    result: "$5.7M Revenue driven by 5.2% ACOS",
     description:
-      "We restructured campaigns and simplified strategy to unlock scalable growth.",
+      "Scale a beauty .",
   },
   {
     title: "Seasonal Brand",
     result: "$100K / Month",
     description:
       "Focused execution and timing helped achieve consistent revenue spikes.",
+  },
+  {
+    title: "Snack Brand",
+    result: "196% PPC Sales",
+    description:
+      "A clean launch strategy improved conversion and reduced wasted spend.",
+  },
+  {
+    title: "Snack Brand",
+    result: "196% PPC Sales",
+    description:
+      "A clean launch strategy improved conversion and reduced wasted spend.",
+  },
+  {
+    title: "Snack Brand",
+    result: "196% PPC Sales",
+    description:
+      "A clean launch strategy improved conversion and reduced wasted spend.",
   },
   {
     title: "Snack Brand",
@@ -39,41 +57,31 @@ export default function CaseStudies() {
         </FadeUp>
 
         {/* 🔥 FIX: ADD MAP */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mt-16">
-          {cases.map((item, index) => (
-            <div
-              key={item.title}
-              className="card bg-[#111] overflow-hidden group hover:-translate-y-1 transition"
-            >
+        <div className="case-slider-shell mt-16">
+          <div className="case-slider-track">
+            {[...cases, ...cases].map((item, index) => (
+              <div
+                key={`${item.title}-${index}`}
+                className="case-slide"
+              >
+                <div className="case-slide-image">
+                  <Image
+                    src={`/images/case${(index % cases.length) + 1}.jpeg`}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
 
-              {/* Image */}
-              <div className="relative w-full h-[200px]">
-                <Image
-                  src={`/images/case${index + 1}.jpeg`}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
+                <div className="case-slide-content">
+                  <p className="case-slide-label">{item.title}</p>
+                  <h3 className="case-slide-title">{item.result}</h3>
+                  <p className="case-slide-text">{item.description}</p>
+                </div>
               </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <p className="text-sm text-gray-500 uppercase">
-                  {item.title}
-                </p>
-
-                <h3 className="text-2xl font-semibold mt-3">
-                  {item.result}
-                </h3>
-
-                <p className="text-muted mt-3">
-                  {item.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>

@@ -8,13 +8,13 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <section className="section-loose pb-20 md:pb-24">
+    <section className="hero-home">
       <div className="container">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* LEFT CONTENT */}
+        <div className="hero-home-grid">
+          {/* LEFT */}
           <div>
             <motion.span
-              className="badge"
+              className="hero-badge"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -23,7 +23,7 @@ export default function Hero() {
             </motion.span>
 
             <motion.h1
-              className="heading mt-6 max-w-3xl"
+              className="hero-title"
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -35,7 +35,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-muted mt-6 max-w-lg"
+              className="hero-subtitle"
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -44,20 +44,20 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 mt-8"
+              className="hero-actions"
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <button
-                className="btn-primary"
+                className="hero-primary-btn"
                 onClick={() => router.push("/contact")}
               >
-                Start a Project
+                Start Project
               </button>
 
               <button
-                className="btn-outline"
+                className="hero-secondary-btn"
                 onClick={() => router.push("/services")}
               >
                 Explore Services
@@ -65,21 +65,20 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            className="hero-visual-shell"
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="relative"
           >
-            <div className="bg-[#111] p-3 rounded-3xl border border-gray-800 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+            <div className="hero-visual-card">
               <Image
-                src="/images/hero.png"
-                alt="Hero Image"
-                width={700}
-                height={700}
-                priority
-                className="rounded-2xl object-cover"
+                src="/images/hero-new.png"
+                alt="Performance dashboard"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
               />
             </div>
           </motion.div>
@@ -87,29 +86,29 @@ export default function Hero() {
 
         {/* STATS */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-14 md:mt-16"
-          initial={{ opacity: 0, y: 28 }}
+          className="hero-stats-grid"
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
         >
-          <div className="hero-stat">
+          <div className="hero-stat-card">
             <h3>$7M+</h3>
             <p>Revenue Generated</p>
           </div>
 
-          <div className="hero-stat">
+          <div className="hero-stat-card">
             <h3>170%</h3>
-            <p>PPC Sales Growth</p>
+            <p>YoY Sales Growth</p>
           </div>
 
-          <div className="hero-stat">
+          <div className="hero-stat-card">
             <h3>27%</h3>
             <p>Profit Acquired</p>
           </div>
 
-          <div className="hero-stat">
-            <h3>5–10%</h3>
-            <p>Average TACOS</p>
+          <div className="hero-stat-card">
+            <h3>5-10%</h3>
+            <p>Average ACOS</p>
           </div>
         </motion.div>
       </div>
