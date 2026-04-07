@@ -39,7 +39,22 @@ function MapPinIcon(props) {
     </svg>
   );
 }
-
+function MailIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M4 4h16v16H4z" stroke="none" />
+      <path d="M4 4l8 7 8-7" />
+      <path d="M4 20l8-7 8 7" />
+    </svg>
+  );
+}
 const socialLinks = [
   {
     name: "Facebook",
@@ -73,7 +88,8 @@ export default function Footer() {
                 alt="Sellerova Logo"
                 width={180}
                 height={60}
-                className="h-[50px] w-auto object-contain"
+                className="h-[52px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+                style={{ filter: "drop-shadow(0 0 12px rgba(255,153,0,0.25))" }}
                 priority
               />
             </div>
@@ -99,6 +115,17 @@ export default function Footer() {
                 <span>+1 325 202 3203</span>
               </a>
 
+              <a
+                href="mailto:info@sellerova.com"
+                className="footer-link-group"
+                aria-label="Email Sellerova"
+              >
+                <span className="footer-icon-wrap">
+                  <MailIcon className="footer-icon" />
+                </span>
+                <span>info@sellerova.com</span>
+              </a>
+              
               <a
                 href="https://maps.google.com/?q=634 E 320 S, Lehi, UT 84043, USA"
                 target="_blank"
@@ -141,12 +168,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[#262626] pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-gray-500">
             © 2026 Sellerova. All rights reserved.
           </p>
 
-         
+
         </div>
       </div>
     </footer>

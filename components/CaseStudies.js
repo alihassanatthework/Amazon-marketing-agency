@@ -6,40 +6,54 @@ import Image from "next/image";
 
 const cases = [
   {
-    title: "Beauty and Personal Care",
+    title: " Beauty & Personal Care Brand",
     result: "$5.7M Revenue driven by 5.2% ACOS",
     description:
-      "Scale a beauty .",
+      "Witness how our performance-focused approach unlocked consistent growth while maintaining strong efficiency.",
+    stats: [
+      { value: "4.3x", label: "ROAS" },
+      { value: "5.2%", label: "ACOS" },
+    ],
   },
   {
-    title: "Seasonal Brand",
+    title: "Household Brand",
     result: "$100K / Month",
     description:
-      "Focused execution and timing helped achieve consistent revenue spikes.",
+      "Focused execution and campaign timing helped the brand capture seasonal demand and maintain strong monthly revenue spikes.",
+    stats: [
+      { value: "$100K", label: "Monthly Revenue" },
+      { value: "Seasonal", label: "Demand Capture" },
+    ],
   },
   {
-    title: "Snack Brand",
-    result: "196% PPC Sales",
+    title: "Apparel Brand",
+    result: "$4.7M Revenue with 231% PPC Sales Growth",
     description:
-      "A clean launch strategy improved conversion and reduced wasted spend.",
+      "Witness how our data-driven approach scaled performance while maintaining exceptional efficiency.",
+    stats: [
+      { value: "231%", label: "PPC Sales" },
+      { value: "4.2%", label: "ACOS" },
+    ],
   },
   {
-    title: "Snack Brand",
-    result: "196% PPC Sales",
+    title: "Health Brand",
+    result: "$6.8M Revenue with 4.2% ACOS",
     description:
-      "A clean launch strategy improved conversion and reduced wasted spend.",
+      "See how precise targeting and continuous optimization delivered massive growth with low ACOS.",
+    stats: [
+      { value: "3.8x+", label: "ROAS" },
+      { value: "4.2%", label: "ACOS" },
+    ],
   },
   {
-    title: "Snack Brand",
-    result: "196% PPC Sales",
+    title: "Pet Supplies Brand",
+    result: " $4.8M Revenue with 4.2% ACOS",
     description:
-      "A clean launch strategy improved conversion and reduced wasted spend.",
-  },
-  {
-    title: "Snack Brand",
-    result: "196% PPC Sales",
-    description:
-      "A clean launch strategy improved conversion and reduced wasted spend.",
+      "Witness how our performance-focused approach drove consistent growth while maintaining strong efficiency.",
+    stats: [
+      { value: "176%", label: "ROAS" },
+      { value: "4.9%", label: "ACOS" },
+    ],
   },
 ];
 
@@ -52,7 +66,7 @@ export default function CaseStudies() {
           <SectionHeading
             badge="Case Studies"
             title="Proof Not Promises"
-            text="Maximize your Amazon brand with proven optimization and advertising."
+            text="Maximize your Amazon brand with proven optimization and advertising. Driven by data. Proven by results."
           />
         </FadeUp>
 
@@ -69,7 +83,7 @@ export default function CaseStudies() {
                     src={`/images/case${(index % cases.length) + 1}.jpeg`}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 768px) 90vw, 50vw"
+                    sizes="(max-width: 768px) 88vw, 540px"
                     className="object-contain"
                   />
                 </div>
@@ -78,6 +92,20 @@ export default function CaseStudies() {
                   <p className="case-slide-label">{item.title}</p>
                   <h3 className="case-slide-title">{item.result}</h3>
                   <p className="case-slide-text">{item.description}</p>
+
+                  {item.stats && (
+                    <div className="case-slide-stats">
+                      {item.stats.map((stat, statIndex) => (
+                        <div
+                          key={`${stat.label}-${statIndex}`}
+                          className="case-slide-stat"
+                        >
+                          <strong>{stat.value}</strong>
+                          <span>{stat.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

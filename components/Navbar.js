@@ -13,7 +13,8 @@ export default function Navbar() {
             width={220}
             height={64}
             priority
-            className="h-[60px] md:h-[68px] w-auto object-contain"
+            className="h-[52px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+            style={{ filter: "drop-shadow(0 0 12px rgba(255,153,0,0.25))" }}
           />
         </Link>
 
