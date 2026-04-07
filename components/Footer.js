@@ -146,9 +146,7 @@ export default function Footer() {
             © 2026 Sellerova. All rights reserved.
           </p>
 
-          <p className="text-sm text-gray-500">
-            Built for performance. Designed for trust.
-          </p>
+         
         </div>
       </div>
     </footer>
