@@ -85,6 +85,37 @@ my-agency-site/
 ├── package.json
 └── PROJECT_ARCHITECTURE.md
 
+
+📁/app folder
+app/
+│
+├── page.js                → Home page
+├── services/
+│   └── page.js            → Services page
+├── contact/
+│   └── page.js            → Contact page
+├── layout.js              → Global layout (navbar, footer, SEO)
+├── globals.css            → Global styles
+
+📁 /components
+components/
+│
+├── Navbar.js
+├── Footer.js
+│
+├── Hero.js
+├── ServicesPreview.js      → homepage small services
+├── ServiceCard.js
+│
+├── CaseStudies.js
+├── Testimonials.js
+│
+├── CTA.js                  → reusable CTA (free audit)
+│
+├── OnboardingProcessSection.js   → your new process block
+│
+├── FadeUp.js               → animation wrapper
+
 Page Architecture
 1. Homepage — app/page.js
 
